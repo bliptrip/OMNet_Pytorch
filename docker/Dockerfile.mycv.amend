@@ -1,3 +1,0 @@
-FROM bliptrip/mycv:latest
-
-RUN pip install pycocotools

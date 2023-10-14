@@ -1,6 +1,0 @@
-FROM bliptrip/tensorflow:latest
-
-ENV TZ=America/Chicago
-
-RUN apt-get install --yes graphviz \
-    && pip3 install pydot
