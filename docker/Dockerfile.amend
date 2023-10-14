@@ -1,0 +1,4 @@
+FROM bliptrip/tensorflow:latest-gpu
+
+RUN apt-get install --yes graphviz \
+    && pip3 install pydot

@@ -1,0 +1,3 @@
+FROM bliptrip/detectron2:torch-1.10.0-cuda11.3-cudnn8-runtime
+
+RUN pip install --force-reinstall --no-deps git+https://github.com/bliptrip/ZalapaTools.git

@@ -1,0 +1,18 @@
+FROM pytorch/pytorch:1.9.1-cuda11.1-cudnn8-runtime
+
+ENV TZ=America/Chicago
+
+COPY requirements.txt /tmp/requirements.txt
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
+&& echo $TZ > /etc/timezone \
+&& apt-get update \
+&& apt-get upgrade --yes \
+&& apt-get install --yes python python3-pip libopencv-dev \
+&& apt-get install git-all vim --yes \
+&& apt-get install python3.7 python3.7-dev --yes \
+&& apt-get install apt-utils python3-all-dev libboost-python-dev --yes \
+&& apt install --yes bc \
+&& pip install opencv-python opencv-contrib-python scikit-image scipy numpy pandas shapely
+
+RUN pip install -r /tmp/requirements.txt
