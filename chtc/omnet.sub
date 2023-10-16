@@ -1,24 +1,24 @@
 # 
 # HTCondor Submit file 
 #
-# Objective: Train feature pyramid network using HTCondor GPU machines
+# Objective: Evaluate OMNet for 3D point cloud registration.
 
 # Must set the universe to Docker
 universe = docker
-docker_image = bliptrip/detectron2:torch-1.10.0-cuda11.3-cudnn8-runtime
+docker_image = bliptrip/omnet_pytorch:1.9.1-cuda11.1-cudnn8-runtime
 
 # set the log, error and output files 
-log = d2.log.txt
-error = d2.err.txt
-output = d2.out.txt
+log = omnet-eval.log.txt
+error = omnet-eval.err.txt
+output = omnet-eval.out.txt
 
 # set the executable to run
-executable = d2.sh
-arguments = --annotations images/d2annotations.json -b 8 -e 4096 --batches-per-image 1024 --model-config configs/mask_rcnn_X_101_32x8d_FPN_3x.yaml --checkpoint models/model_final_2d9806.pkl -s 390263 --mask-map maps/d2.1.json  
+executable = evaluate.sh
+arguments =
 
 # take our python script to the compute node
-transfer_input_files = d2_train.py,d2.tar.xz,models.tar.xz,images.tar.xz
-transfer_output_files = models.tar.xz
+transfer_input_files = OMNet.tar.xz
+transfer_output_files = omnet-output.tar.xz
 
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
