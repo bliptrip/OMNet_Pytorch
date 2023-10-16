@@ -9,3 +9,5 @@ dataset/data.zip
 */__pycache__
 checkpoints
 configs
+.*.swp
+.*.swo
