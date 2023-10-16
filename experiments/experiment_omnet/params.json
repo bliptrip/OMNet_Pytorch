@@ -2,7 +2,7 @@
     "exp_name": "omnet",
     "model_dir": "experiments/experiment_omnet",
     "dataset_type": "modelnet_os",
-    "transform_type": "modelnet_os_prnet_clean",
+    "transform_type": "modelnet_os_rpmnet_noise",
     "net_type": "omnet",
     "loss_type": "omnet",
     "eval_type": [
