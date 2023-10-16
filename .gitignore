@@ -1,10 +1,11 @@
-experiments/experiment_omnet/summary
-experiments/experiment_omnet/*.log
-experiments/experiment_omnet/*.pth
-experiments/experiment_omnet/val*
-experiments/experiment_omnet/test*
+experiments/**/summary
+experiments/**/*.log
+experiments/**/*.pth
+experiments/**/val*
+experiments/**/test*
 dataset/data
 dataset/data.zip
+*.tar.xz
 */__pycache__
 checkpoints
 configs
